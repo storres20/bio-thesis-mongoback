@@ -34,8 +34,8 @@ app.use(express.json());
 
 // Cors
 var corsOptions = {
-    origin: "http://localhost:3000" //frontend
-    //origin: "https://doctorsfinal.netlify.app" //frontend
+    //origin: "http://localhost:3000" //frontend
+    origin: "https://bio-thesis.vercel.app/login" //frontend
 };
 
 app.use(cors(corsOptions));

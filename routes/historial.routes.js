@@ -74,14 +74,15 @@ router.post('/create', async (req, res) => {
     const historial = new Historial({
         hospitals_id: req.body.hospitals_id,
         inventories_id: req.body.inventories_id,
-        servicio: req.body.servicio,
+        //servicio: req.body.servicio,
         problema: req.body.problema,
         fecha_open: req.body.fecha_open,
         estado: req.body.estado,
         usersid_open: req.body.usersid_open,
         usersid_close: null,
         fecha_close: '',
-        solucion: '',
+        //solucion: '',
+        images: req.body.images,
     });
 
     try {

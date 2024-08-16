@@ -7,6 +7,7 @@ const users = require('./routes/user.routes');
 const inventories = require('./routes/inventory.routes');
 const hospitals = require('./routes/hospital.routes');
 const historials = require('./routes/historial.routes');
+const historialbyids = require('./routes/historialbyid.routes');
 
 const mongoose = require('mongoose');
 const mongoString = process.env.DATABASE_URL;
@@ -50,6 +51,7 @@ app.use('/api/v1/users', users)
 app.use('/api/v1/inventories', inventories)
 app.use('/api/v1/hospitals', hospitals)
 app.use('/api/v1/historials', historials)
+app.use('/api/v1/historialbyids', historialbyids)
 
 app.listen(3001, () => {
     console.log(`Server Started at ${3001}`)

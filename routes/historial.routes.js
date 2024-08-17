@@ -39,6 +39,10 @@ router.get('/:id', async (req, res) => {
             .populate({
                 path: 'usersid_close',
                 populate: { path: 'hospitals_id' }
+            })
+            .populate({
+                path: 'usersid_tech',
+                populate: { path: 'hospitals_id' }
             });
         if (historial === null) {
             return res.status(404).json({ message: "Cannot find historial" });
@@ -80,6 +84,7 @@ router.post('/create', async (req, res) => {
         estado: req.body.estado,
         usersid_open: req.body.usersid_open,
         usersid_close: null,
+        usersid_tech: null,
         fecha_close: '',
         //solucion: '',
         images: req.body.images,
@@ -108,6 +113,10 @@ router.get('/getByHospital/:hospitalId', async (req, res) => {
             })
             .populate({
                 path: 'usersid_close',
+                populate: { path: 'hospitals_id' }
+            })
+            .populate({
+                path: 'usersid_tech',
                 populate: { path: 'hospitals_id' }
             });
 

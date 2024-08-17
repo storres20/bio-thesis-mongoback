@@ -10,6 +10,7 @@ const historialSchema = new Schema({
     estado: String,
     usersid_open: { type: Schema.Types.ObjectId, ref: 'User' },
     usersid_close: { type: Schema.Types.ObjectId, ref: 'User', default: null },
+    usersid_tech: { type: Schema.Types.ObjectId, ref: 'User', default: null },
     fecha_close: String,
     //solucion: String,
     images: [String], // Changed from "image: String" to "images: [String]"

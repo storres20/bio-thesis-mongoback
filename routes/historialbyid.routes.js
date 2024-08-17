@@ -96,17 +96,10 @@ router.patch('/:id', async (req, res) => {
 // Add a new historial
 router.post('/create', async (req, res) => {
     const historial = new Historialbyid({
-        hospitals_id: req.body.hospitals_id,
-        inventories_id: req.body.inventories_id,
-        //servicio: req.body.servicio,
-        problema: req.body.problema,
-        fecha_open: req.body.fecha_open,
-        estado: req.body.estado,
-        usersid_open: req.body.usersid_open,
-        usersid_close: null,
-        fecha_close: '',
-        solucion: '',
-        image: req.body.image,
+        historials_id: req.body.historials_id,
+        users_id: req.body.users_id,
+        note: req.body.note,
+        fecha: req.body.fecha,
     });
 
     try {

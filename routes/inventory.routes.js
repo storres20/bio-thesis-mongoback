@@ -103,6 +103,21 @@ router.get('/codepat/:codepat', async (req, res) => {
   }
 });
 
+// GET by SERIE Method
+router.get('/serie/:serie', async (req, res) => {
+  try {
+    const data = await Model.findOne({ serie: req.params.serie });
+
+    if (data !== null) {
+      res.json(data);
+    } else {
+      res.status(404).json({ message: 'No data found for the provided serie.' });
+    }
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
 //Update by ID Method
 router.patch('/:id', async (req, res) => {
   //res.send('Update by ID API')
